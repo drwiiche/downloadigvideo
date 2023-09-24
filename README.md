@@ -8,17 +8,13 @@ A website that lets you download Instagram videos easily and quickly. You can pa
 
 _Note: Instagram stories aren't supported._
 
-You can preview and try the website live in Vercel here : [insta-video-saver.vercel.app](https://insta-video-saver.vercel.app/)
+You can preview and try the website live in Vercel here : [download-ig-videos.vercel.app](https://download-ig-videos.vercel.app/)
 
 ## Website Preview
 
-- Easy and User friendly UI (Interactions feedback and error messages).
+Easy and User friendly UI (Interactions feedback and error messages).
 
-![Desktop preview](https://github.com/riad-azz/readme-storage/blob/main/instagram-videos-downloader/preview-desktop.gif?raw=true)
-
-- Responsive UI on mobile.
-
-![Mobile preview](https://github.com/riad-azz/readme-storage/blob/main/instagram-videos-downloader/preview-mobile.gif?raw=true)
+![Desktop preview](https://github.com/riad-azz/readme-storage/blob/main/instagram-videos-downloader/desktop-preview.gif?raw=true)
 
 ## Getting Started
 
@@ -66,6 +62,28 @@ npx jest -t "<test-name>"
 npx jest -t "success-fetchPostJson"
 ```
 
+## Authenticated API
+
+You can use a session cookie to authenticate your requests by setting the `INSTAGRAM_COOKIE` environment variable:
+
+```env
+# INSTAGRAM - API
+INSTAGRAM_COOKIE="YOUR-INSTAGRAM-COOKIE"
+
+# ...other variables
+```
+
+Next go to the `src/configs/instagram.ts` file and make sure that `enableUserAPI` is set to `true`:
+
+```js
+// Instagram API
+export const instagramCookie = process.env.INSTAGRAM_COOKIE ?? "";
+export const enableUserApi = !!instagramCookie && true; // <---- Here make sure its true
+// ... Other vars
+```
+
+**DISCLAIMER**: The account might be permanently suspended by Instagram. Use at your own risk.
+
 ## Server API
 
 The Server API is disabled by default but you can enable it by :
@@ -75,7 +93,7 @@ The Server API is disabled by default but you can enable it by :
 
 Now you can use the API and integrate this functionality in your other applications.
 
-### Endpoint: /api/instagram?url={POST_URL}
+### Endpoint: /api/video?url={POST_URL}
 
 Parameters :
 
@@ -84,7 +102,7 @@ Parameters :
 #### GET Request example
 
 ```bash
-curl -i "http://localhost:3000/api/instagram?url=https://www.instagram.com/p/CGh4a0iASGS"
+curl -i "http://localhost:3000/api/video?url=https://www.instagram.com/p/CGh4a0iASGS"
 ```
 
 #### API Response

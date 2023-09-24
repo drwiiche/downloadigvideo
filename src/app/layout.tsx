@@ -1,9 +1,11 @@
 import { Inter as MainFont } from "next/font/google";
 
 import "@/styles/globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 import { mainMetadata } from "@/configs/seo";
-import AnimatedBackground from "@/components/AnimatedBackground";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import GoogleAdsense from "@/components/GoogleAdsense";
 
 const mainFont = MainFont({
   subsets: ["latin"],
@@ -18,14 +20,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAdsense />
       <body
         className={cn(
-          "overflow-x-hidden bg-zinc-950 text-slate-100",
+          "overflow-x-hidden bg-stone-100 text-black",
+          "flex min-h-screen w-full flex-col justify-between",
+          "pt-20", // Spacing For Navbar
           mainFont.className
         )}
       >
-        <AnimatedBackground />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
