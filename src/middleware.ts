@@ -13,6 +13,7 @@ const isStaticPath = (path: string) => {
     "/favicon.ico",
     "/robots.txt",
     "/webmanifest.json",
+    "/yandex_2471cd2d097e634d.html"
   ];
   for (const staticPath of staticPaths) {
     if (path.startsWith(staticPath)) {
