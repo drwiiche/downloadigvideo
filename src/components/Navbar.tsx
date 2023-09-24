@@ -9,8 +9,8 @@ const Navbar = () => {
         aria-label="Logo"
         className="w-fit animate-text bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text py-2 text-base font-extrabold text-transparent"
       >
-        <span className="hidden text-xl md:block">IG Downloader</span>
-        <span className="block text-base md:hidden">IG Downloader</span>
+        <span className="hidden text-xl md:block">IG Video Downloader</span>
+        <span className="block text-base md:hidden">IG Video Downloader</span>
       </Link>
       {/* Desktop */}
       <div className="hidden items-center gap-8 pr-4 text-lg font-light md:flex">
@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
         <Link
           target="_blank"
-          href="https://twitter.com/riadazz"
+          href="https://twitter.com/badadiss"
           className="text-primary hover:underline"
         >
           Contact
@@ -32,7 +32,7 @@ const Navbar = () => {
         </Link>
         <Link
           target="_blank"
-          href="https://twitter.com/riadazz"
+          href="https://twitter.com/badadiss"
           className="rounded bg-blue-500 px-4 py-2 text-white"
         >
           Contact
